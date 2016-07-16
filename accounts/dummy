@@ -1,0 +1,9 @@
+unset from;
+unset signature;
+set from="Gabriel Pettier <gabriel.pettier@gmail.com>";
+set smtp_url = "smtp://gabriel.pettier@smtp.gmail.com:587/"
+# set smtp_pass = ""
+set smtp_pass = `gpg2 --batch --decrypt ~/.mutt/passwords.gpg |jq .mail_gmail -r`
+set trash="=[Gmail].Corbeille";
+set mbox="=[Gmail].Tous les messages";
+set postponed="=[Gmail].Brouillons"'

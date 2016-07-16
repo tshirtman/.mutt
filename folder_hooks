@@ -1,0 +1,3 @@
+folder-hook . 'unset trash'
+folder-hook Personal source $HOME/.mutt/accounts/personnal
+folder-hook Tangible source $HOME/.mutt/accounts/tangible

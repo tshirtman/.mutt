@@ -1,0 +1,67 @@
+source $HOME/.mutt/encodings
+set mbox_type=Maildir
+set pgp_auto_decode=yes
+set folder=~/Mail
+
+set my_alt_index_format="%s"
+set index_format="%Z %{%a.%d/%m/%y} %3M %-15.15L│ %s"
+
+macro index B "<enter-command>source $HOME/.mutt/toggle_index_format.rc<enter>"
+
+set realname = "Gabriel Pettier"
+
+source $HOME/.mutt/mailboxes
+source $HOME/.mutt/folder_hooks
+source $HOME/.mutt/macros
+source $HOME/.mutt/sidebar
+source $HOME/.mutt/statusbar
+source $HOME/.mutt/pager
+source $HOME/.mutt/query
+source $HOME/.mutt/gpg.rc
+source $HOME/.muttrc.crypt-recipients
+
+#source $HOME/.mutt/colors
+##uncomment the colorscheme you want to use, and comment out the others
+source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-${SOLARIZED}-16.muttrc
+#source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-light-16.muttrc
+#source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
+#source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
+
+# initial box
+set spoolfile=+Personal/INBOX
+
+set header_cache =~/.mutt/cache/headers
+set message_cachedir =~/.mutt/cache/bodies
+set certificate_file =~/.mutt/certificates
+set mailcap_path = $HOME/.mutt/mailcap
+
+set move = no  #Stop asking to "move read messages to mbox"!
+
+ignore headers *
+unignore headers from to subject date cc
+
+set use_envelope_from = yes # answer from the address we got the mail to
+set sendmail_wait=-1
+set wait_key = no        # shut up, mutt
+set timeout = 3          # idle time before scanning
+set mail_check = 1       # minimum time between scans
+unset move               # gmail does that
+set delete               # don't ask, just do
+unset confirmappend      # don't ask, just do!
+set quit                 # don't ask, just do!!
+unset mark_old           # read/new is good enough for me
+set smart_wrap
+set copy 		 # keep a copy of sent messages
+set mime_forward
+set mime_forward_rest = yes # forward attachements with mails
+
+set text_flowed = yes
+
+set sleep_time = 0
+
+# set ssl for smtp
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+auto_view text/html
+alternative_order text/enriched text/plain text text/html

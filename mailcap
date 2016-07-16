@@ -1,0 +1,24 @@
+#MS office documents
+application/excel; $HOME/.mutt/mutt_bgrun libreoffice %s
+application/ms-exc; $HOME/.mutt/mutt_bgrun libreoffice %s
+application/msword; $HOME/.mutt/mutt_bgrun libreoffice %s
+application/vnd.ms-exc; $HOME/.mutt/mutt_bgrun libreoffice %s
+application/vnd.ms-excel; $HOME/.mutt/mutt_bgrun libreoffice %s
+application/x-msexcel; $HOME/.mutt/mutt_bgrun libreoffice %s
+
+# Images
+image/*; $HOME/.mutt/mutt_bgrun eog %s
+
+# PDFs
+application/pdf; $HOME/.mutt/mutt_bgrun evince %s
+
+# HTML
+text/html; $HOME/.mutt/html2txt %s; copiousoutput
+text/html; $HOME/.mutt/mutt_bgrun firefox %s
+
+text/*; vim %s
+
+# Unidentified files
+application/octet-stream; $HOME/.mutt/mutt_bgrun xdg-open %s
+
+multipart/alternative; less %s

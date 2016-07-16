@@ -1,0 +1,27 @@
+# macros
+macro index,pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+
+macro index p "<enter-command>set pager_index_lines=30"
+macro index P "<enter-command>set pager_index_lines=0"
+macro index,pager gt "|mutt2task<enter>"
+
+bind index gg       first-entry
+bind index G        last-entry
+
+bind index R        group-reply
+bind index u        sync-mailbox
+bind index <space>  collapse-thread
+bind index _        collapse-all
+
+#bind compose p postpone-message
+
+#bind editor  noop #fix for spaces in names of folders
+macro index,pager y "unset trash\n<sync-mailbox> " "Gmail archive message"
+macro index,pager gi "=INBOX" "Go to inbox"
+macro index,pager ga "=[Gmail]/Tous les messages" "Go to all mail"
+macro index,pager gs "=[Gmail]/Messages envoyés" "Go to starred messages"
+macro index,pager gd "=[Gmail]/Drafts" "Go to drafts"
+
+macro index       E "<change-folder>=INBOX<enter>"  "search everything"
+macro index,pager d "<save-message>=[Gmail].Corbeille<enter>"           "move message to the trash"
+macro index,pager S "<save-message>=/[Gmail].Spam<enter>"                "mark message as spam"

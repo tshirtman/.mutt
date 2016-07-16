@@ -1,0 +1,53 @@
+# ######
+# Gmail
+# ######
+
+IMAPAccount gmail
+# Address to connect to
+Host imap.gmail.com
+User gabriel.pettier@gmail.com
+PassCmd "gpg2 --batch --decrypt ~/.mutt/passwords.gpg |jq .mail_gmail -r"
+#Use SSL
+UseIMAPS yes
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+# The trailing "/" is important
+Path ~/Mail/Personal/
+Inbox ~/Mail/Personal/INBOX/
+
+Channel gmail
+Master :gmail-remote:
+Slave :gmail-local:
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+Patterns *
+
+# #########
+# tangible
+# #########
+ImapAccount tangible
+Host mail.gandi.net
+User gabriel@tangibledisplay.com
+PassCmd "gpg2 --batch --decrypt ~/.mutt/passwords.gpg |jq .mail_tangible -r"
+UseIMAPS yes
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore tangible-remote
+Account tangible
+
+MaildirStore tangible-local
+Path ~/Mail/tangible
+Inbox ~/Mail/tangible/INBOX
+
+Channel tangible
+Master :tangible-remote:
+Slave :tangible-local:
+Patterns *
+
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Save the synchronization state files in the relevant directory
+SyncState *

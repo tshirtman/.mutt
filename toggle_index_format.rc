@@ -1,0 +1,3 @@
+set my_tmp=$index_format
+set index_format=$my_alt_index_format
+set my_alt_index_format=$my_tmp
