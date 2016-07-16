@@ -1,0 +1,28 @@
+mailboxes \
+ "+[Gmail]==========================================="\
+	"+Personal/[Gmail]/.Tous les messages"\
+	"+Personal/[Gmail]/.Important"\
+	"+Personal/[Gmail]/.Suivis"\
+	"+Personal/[Gmail]/.Brouillons"\
+	"+Personal/[Gmail]/.Messages envoy&AOk-s"\
+	"+Personal/[Gmail]/.Corbeille"\
+	"+Personal/[Gmail]/.Spam"\
+ "+[Personal]========================================"\
+	"+Personal/INBOX"\
+	"+Personal/tangible"\
+	"+Personal/kivy"\
+	"+Personal/python-for-android"\
+	"+Personal/github"\
+	"+Personal/afpy"\
+	"+Personal/twitter"\
+	"+Personal/ML"\
+	"+Personal/ML/.kivy-asso"\
+	"+Personal/ML/.kivy-org"\
+	"+Personal/ML/.kivy-dev"\
+	"+Personal/ML/.kivy-users"\
+ "+[Tangible]======================================"\
+	"+Tangible/INBOX"\
+	"+Tangible/Sent"\
+	"+Tangible/Drafts"\
+	"+Tangible/Trash"\
+
