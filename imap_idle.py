@@ -21,7 +21,9 @@ MBSYNC = '/usr/bin/mbsync'
 GPG_COMMAND = '/usr/bin/gpg2 --batch --decrypt ~/.mutt/passwords.gpg | /usr/bin/jq .{} -r'  # noqa
 POST_SYNC_COMMANDS = [
     ['/usr/bin/notmuch', 'new'],
-    [expanduser('~/.mutt/nottoomuch-addresses.sh'), '--update']
+    [expanduser('~/.mutt/nottoomuch-addresses.sh'), '--update'],
+    [expanduser('~/.mutt/notify-mail'), expanduser('~/Mail/tangible/INBOX')],
+    [expanduser('~/.mutt/notify-mail'), expanduser('~/Mail/Personal/INBOX')],
 ]
 
 conf = [

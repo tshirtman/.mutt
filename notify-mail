@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+box=$1
+new=$(ls $box/new | wc -l)
+if [ $new != '0' ]; then
+   notify-send "${box#$HOME/Mail/}: $new unread message(s)"
+fi
