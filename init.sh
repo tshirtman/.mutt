@@ -42,3 +42,5 @@ case $yn in
 	*) echo "please answer yes or no";;
 esac
 done
+
+$HOME/.mutt/gen-pgp-hooks.sh > $HOME/.mutt/gpg.rc

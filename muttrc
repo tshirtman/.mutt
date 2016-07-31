@@ -22,7 +22,8 @@ source $HOME/.muttrc.crypt-recipients
 
 #source $HOME/.mutt/colors
 ##uncomment the colorscheme you want to use, and comment out the others
-source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-${SOLARIZED}-16.muttrc
+#source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-${SOLARIZED}-16.muttrc
+source $HOME/.mutt/base16-mutt-256
 #source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-light-16.muttrc
 #source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
 #source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
