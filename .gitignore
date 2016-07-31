@@ -1,5 +1,10 @@
 *.swo
 *.swp
 *.un~
+*.pyc
+*.pyo
+*.egg-info
 send
 cache
+__pycache__
+gpg.rc
