@@ -23,13 +23,16 @@ done
 
 while true
 do
-read -p "do you want to link mailsync to ~/bin/mailsync (Y/N)" yn
+read -p "link mailsync.conf into ~/.config/mailsync/mailsync.conf?" yn
 case $yn in
-	[Yy]*) ln -sf $PWD/.mutt/imap_idle.py $PWD/bin/mailsync; break;;
+	[Yy]*) mkdir -p ~/.config/mailsync
+		ln $PWD/mailsync ~/.config/mailsync/mailsync.conf
+		break;;
 	[Nn]*) break;;
 	*) echo "please answer yes or no";;
 esac
 done
+
 
 while true
 do
