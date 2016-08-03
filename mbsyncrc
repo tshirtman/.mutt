@@ -39,7 +39,7 @@ IMAPStore tangible-remote
 Account tangible
 
 MaildirStore tangible-local
-Path ~/Mail/tangible
+Path ~/Mail/tangible/
 Inbox ~/Mail/tangible/INBOX
 
 Channel tangible

@@ -20,9 +20,9 @@ mailboxes \
 	"+Personal/ML/.kivy-org"\
 	"+Personal/ML/.kivy-dev"\
 	"+Personal/ML/.kivy-users"\
- "+[Tangible]======================================"\
-	"+Tangible/INBOX"\
-	"+Tangible/Sent"\
-	"+Tangible/Drafts"\
-	"+Tangible/Trash"\
+ "+[tangible]======================================"\
+	"+tangible/INBOX"\
+	"+tangible/Sent"\
+	"+tangible/Drafts"\
+	"+tangible/Trash"\
 
