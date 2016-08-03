@@ -26,7 +26,7 @@ do
 read -p "link mailsync.conf into ~/.config/mailsync/mailsync.conf?" yn
 case $yn in
 	[Yy]*) mkdir -p ~/.config/mailsync
-		ln $PWD/mailsync ~/.config/mailsync/mailsync.conf
+		ln $PWD/mailsync.conf ~/.config/mailsync/mailsync.conf
 		break;;
 	[Nn]*) break;;
 	*) echo "please answer yes or no";;
