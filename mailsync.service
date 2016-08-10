@@ -1,0 +1,15 @@
+[Unit]
+Description=resume mail sync
+After=suspend.target
+#After=hibernate.target
+#After=hybrid-sleep.target
+
+[Service]
+User=gabriel
+Group=gabriel
+ExecStart=/home/gabriel/.local/bin/mailsync resume
+
+[Install]
+WantedBy=suspend.target
+#WantedBy=hibernate.target
+#WantedBy=hybrid-sleep.target

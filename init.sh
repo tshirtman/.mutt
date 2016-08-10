@@ -46,4 +46,16 @@ case $yn in
 esac
 done
 
+while true
+do
+read -p "do you want to install systemd service for mailsync?" yn
+case $yn in
+	[Yy]*) sudo cp $PWD/mailsync.service /etc/systemd/system/
+		sudo systemctl enable mailsync.service
+		break;;
+	[Nn]*) break;;
+	*) echo "please answer yes or no";;
+esac
+done
+
 $HOME/.mutt/gen-pgp-hooks.sh > $HOME/.mutt/gpg.rc
