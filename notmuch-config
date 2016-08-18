@@ -31,7 +31,7 @@ path=/home/gabriel/Mail
 [user]
 name=gabriel pettier
 primary_email=gabriel.pettier@gmail.com
-other_email=dev@tangibledisplay.com, gabriel@tangibledisplay.com;
+other_email=dev@tangibledisplay.com;gabriel@tangibledisplay.com;
 
 # Configuration for "notmuch new"
 #
