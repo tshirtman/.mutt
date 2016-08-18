@@ -8,11 +8,11 @@ source $HOME/.mutt/formats
 source $HOME/.mutt/mailboxes
 source $HOME/.mutt/folder_hooks
 source $HOME/.mutt/macros
-source `FILE=$HOME/.mutt/sidebar; if [ ! -e "/usr/bin/mutt-patched" ]; then FILE=/dev/null;fi; echo "$FILE"`
 source $HOME/.mutt/statusbar
 source $HOME/.mutt/pager
 source $HOME/.mutt/query
 source $HOME/.mutt/gpg.rc
+source `FILE=$HOME/.mutt/sidebar; if [ ! -e "/usr/bin/mutt-patched" ]; then FILE=/dev/null;fi; echo "$FILE"`
 
 source $HOME/.mutt/base16-mutt-256
 
