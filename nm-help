@@ -1,0 +1,17 @@
+o from:<name-or-address>    o lastmod:<initial-revision>..<final-revision>
+o to:<name-or-address>      o id:<message-id>
+o date:<since>..<until>     o tag:<tag> (or is:<tag>)
+o thread:<thread-id>        o subject:<word-or-quoted-phrase>
+o folder:<maildir-folder>   o attachment:<word>
+o mimetype:<word>           o path:<directory-path> or path:<directory-path>/**
+
+operators:
+ and, or, xor, near, adj
+
+time and dates:
+- rel.: [N|number] (years|months|weeks|days|hours|hrs|minutes|mins|seconds|secs) e.g: 5M2d, two weeks
+- abs.: H[H]:MM[:SS] [(am|a.m.|pm|p.m.)]     HHMMSS
+	H[H] (am|a.m.|pm|p.m.)               now | noon | midnight
+        YYYY-MM[-DD]            MM-YYYY      Mon[thname] D[D][(st|nd|rd|th)] [YYYY]
+	DD-MM[-[YY]YY]          M[M]/YYYY    D[D][(st|nd|rd|th)] Mon[thname] [YYYY]
+	M[M]/D[D][/[YY]YY]      Wee[kday]    D[D].M[M][.[YY]YY]
