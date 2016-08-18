@@ -48,7 +48,7 @@ while true
 do
 read -p "do you want to install packages (isync, mutt-patches notmuch-mutt gnupg2)" yn
 case $yn in
-	[Yy]*) sudo apt-get install isync mutt-patched notmuch-mutt gnupg2;
+	[Yy]*) sudo apt-get install isync mutt-patched notmuch-mutt gnupg2 jq tmux;
 		pip install --user imapclient
 		break;;
 	[Nn]*) break;;
