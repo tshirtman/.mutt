@@ -2,13 +2,9 @@ set mbox_type=Maildir
 set pgp_auto_decode=yes
 set folder=~/Mail
 
-set my_alt_index_format="%s"
-set index_format="%Z %{%a.%d/%m/%y} %3M %-15.15L│ %s"
-
-macro index B "<enter-command>source $HOME/.mutt/toggle_index_format.rc<enter>"
-
 set realname = "Gabriel Pettier"
 
+source $HOME/.mutt/formats
 source $HOME/.mutt/mailboxes
 source $HOME/.mutt/folder_hooks
 source $HOME/.mutt/macros
