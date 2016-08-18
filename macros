@@ -21,7 +21,3 @@ macro index,pager gi "=INBOX" "Go to inbox"
 macro index,pager ga "=[Gmail]/Tous les messages" "Go to all mail"
 macro index,pager gs "=[Gmail]/Messages envoyés" "Go to starred messages"
 macro index,pager gd "=[Gmail]/Drafts" "Go to drafts"
-
-macro index       E "<change-folder>=INBOX<enter>"  "search everything"
-macro index,pager d "<save-message>=[Gmail].Corbeille<enter>"           "move message to the trash"
-macro index,pager S "<save-message>=/[Gmail].Spam<enter>"                "mark message as spam"

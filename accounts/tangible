@@ -3,6 +3,6 @@ set signature="$HOME/.mutt/signatures/tangible";
 set from="Gabriel Pettier <gabriel@tangibledisplay.com>";
 set smtp_url = "smtp://"gabriel@tangibledisplay.com"@mail.gandi.net:587/"
 set smtp_pass = "`gpg2 --batch --decrypt $HOME/.mutt/passwords.gpg 2> /dev/null|jq .mail_tangible -r`"
-set trash="=Tangible/Trash";
-set record="=Tangible/Sent";
-set postponed="=Tangible/Drafts";
+set trash="=tangible/Trash";
+set record="=tangible/Sent";
+set postponed="=tangible/Drafts";

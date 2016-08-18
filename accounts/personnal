@@ -3,7 +3,7 @@ unset signature;
 set from="Gabriel Pettier <gabriel.pettier@gmail.com>";
 set smtp_url = "smtp://gabriel.pettier@smtp.gmail.com:587/"
 set smtp_pass = `gpg2 --batch --decrypt $PWD/.mutt/passwords.gpg 2>/dev/null|jq .mail_gmail -r`
-set trash="=[Gmail].Corbeille";
-set record="=[Gmail].Messages Envoyés";
-set mbox="=[Gmail].Tous les messages";
-set postponed="=[Gmail].Brouillons"';
+set trash="+Personal/[Gmail]/.Corbeille";
+set record="+Personal/[Gmail]/.Messages Envoyés";
+set mbox="+[Personal/Gmail]/.Tous les messages";
+set postponed="+[Personal/Gmail]/.Brouillons"';
