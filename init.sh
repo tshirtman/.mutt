@@ -23,6 +23,16 @@ done
 
 while true
 do
+read -p "do you want to link notmuch-config to ~/.notmuch-config (Y/N)" yn
+case $yn in
+	[Yy]*) ln -s $PWD/notmuch-config ~/.notmuch-config; break;;
+	[Nn]*) break;;
+	*) echo "please answer yes or no";;
+esac
+done
+
+while true
+do
 read -p "link mailsync.conf into ~/.config/mailsync/mailsync.conf?" yn
 case $yn in
 	[Yy]*) mkdir -p ~/.config/mailsync
