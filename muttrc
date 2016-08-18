@@ -13,35 +13,25 @@ source $HOME/.mutt/statusbar
 source $HOME/.mutt/pager
 source $HOME/.mutt/query
 source $HOME/.mutt/gpg.rc
-source $HOME/.muttrc.crypt-recipients
 
-#source $HOME/.mutt/colors
-##uncomment the colorscheme you want to use, and comment out the others
-#source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-${SOLARIZED}-16.muttrc
 source $HOME/.mutt/base16-mutt-256
-#source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-light-16.muttrc
-#source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
-#source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
 
 # initial box
 set spoolfile=+Personal/INBOX
 
-set header_cache =~/.mutt/cache/headers
-set message_cachedir =~/.mutt/cache/bodies
-set certificate_file =~/.mutt/certificates
+set header_cache = $HOME/.mutt/cache/headers
+set message_cachedir = $HOME/.mutt/cache/bodies
+set certificate_file = $HOME/.mutt/certificates
+
 set mailcap_path = $HOME/.mutt/mailcap
 
 set move = no  #Stop asking to "move read messages to mbox"!
-
-ignore headers *
-unignore headers from to subject date cc
 
 set use_envelope_from = yes # answer from the address we got the mail to
 set sendmail_wait=-1
 set wait_key = no        # shut up, mutt
 set timeout = 3          # idle time before scanning
 set mail_check = 1       # minimum time between scans
-unset move               # gmail does that
 set delete               # don't ask, just do
 unset confirmappend      # don't ask, just do!
 set quit                 # don't ask, just do!!
