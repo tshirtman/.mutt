@@ -47,7 +47,7 @@ other_email=dev@tangibledisplay.com;
 #		be ignored, independent of its depth/location in the mail store.
 #
 [new]
-tags=;
+# tags=;
 ignore=
 
 # Search configuration
