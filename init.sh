@@ -46,10 +46,10 @@ done
 
 while true
 do
-read -p "do you want to install packages (isync, mutt-patches notmuch-mutt gnupg2)" yn
+read -p "do you want to install packages (isync, mutt-patches notmuch-mutt gnupg2 jq tmux imapclient urlscan)" yn
 case $yn in
 	[Yy]*) sudo apt-get install isync mutt-patched notmuch-mutt gnupg2 jq tmux;
-		pip install --user imapclient
+		pip install --user imapclient urlscan
 		break;;
 	[Nn]*) break;;
 	*) echo "please answer yes or no";;
