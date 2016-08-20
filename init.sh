@@ -82,4 +82,16 @@ esac
 done
 
 
+while true
+do
+read -p "do you want to link gpg-agent.conf into ~/.gnupg? (Y/N)" yn
+case $yn in
+	[Yy]*) ln -s $HOME/.mutt/gpg-agent.conf ~/.gnupg/
+		break;;
+	[Nn]*) break;;
+	*) echo "please answer yes or no";;
+esac
+done
+
+
 $HOME/.mutt/gen-pgp-hooks.sh > $HOME/.mutt/gpg.rc
