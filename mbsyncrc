@@ -47,7 +47,7 @@ Master :tangible-remote:
 Slave :tangible-local:
 Patterns *
 
-# Automatically create missing mailboxes, both locally and on the server
-Create Both
+# Automatically create missing mailboxes, only locally
+Create Slave
 # Save the synchronization state files in the relevant directory
 SyncState *

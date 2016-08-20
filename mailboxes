@@ -19,6 +19,7 @@ mailboxes \
 	"+Personal/ML/.kivy-org"\
 	"+Personal/ML/.kivy-dev"\
 	"+Personal/ML/.kivy-users"\
+	"+Personal/ML/.neomutt"\
  "+[tangible]======================================"\
 	"+tangible/INBOX"\
 	"+tangible/Sent"\
