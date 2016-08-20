@@ -1,13 +1,12 @@
 mailboxes \
- "+[Gmail]==========================================="\
-	"+Personal/[Gmail]/.Tous les messages"\
-	"+Personal/[Gmail]/.Important"\
-	"+Personal/[Gmail]/.Suivis"\
-	"+Personal/[Gmail]/.Brouillons"\
-	"+Personal/[Gmail]/.Messages envoy&AOk-s"\
-	"+Personal/[Gmail]/.Corbeille"\
-	"+Personal/[Gmail]/.Spam"\
  "+[Personal]========================================"\
+	"+Personal/Tous les messages"\
+	"+Personal/Important"\
+	"+Personal/Suivis"\
+	"+Personal/Brouillons"\
+	"+Personal/Messages envoy&AOk-s"\
+	"+Personal/Corbeille"\
+	"+Personal/Spam"\
 	"+Personal/INBOX"\
 	"+Personal/tangible"\
 	"+Personal/kivy"\

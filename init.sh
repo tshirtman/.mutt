@@ -68,4 +68,18 @@ case $yn in
 esac
 done
 
+while true
+do
+read -p "do you want to link [Gmail]/.* mailboxes into their parent dir? (Y/N)" yn
+case $yn in
+	[Yy]*) pushd $HOME/Mail/Personal
+		python3 $HOME/.mutt/links.py
+		popd
+		break;;
+	[Nn]*) break;;
+	*) echo "please answer yes or no";;
+esac
+done
+
+
 $HOME/.mutt/gen-pgp-hooks.sh > $HOME/.mutt/gpg.rc

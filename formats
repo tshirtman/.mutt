@@ -1,6 +1,7 @@
 set my_alt_index_format="%s"
 set index_format="%Z %{%a.%d/%m/%y} %3M %-15.15L│ %s"
 set folder_format="%2C %t %N %d %f"
+set sidebar_format = "%B%<F? [%F]>%* %<N?%N/>%S"
 
 macro index B "<enter-command>source $HOME/.mutt/toggle_index_format.rc<enter>"
 
