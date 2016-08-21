@@ -32,3 +32,18 @@ macro index <F8> \
 
 macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+# open a different virtual folder
+bind index,pager X change-vfolder
+
+# read entire thread of the current message
+bind index,pager + entire-thread
+
+# modify (notmuch) tags
+bind index,pager ` modify-labels
+
+# generate virtual folder from query
+bind index,pager \eX vfolder-from-query
+
+# switch between normal and virtual mailboxes
+bind index,pager \ex sidebar-toggle-virtual
