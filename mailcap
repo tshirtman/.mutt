@@ -16,6 +16,9 @@ application/pdf; $HOME/.mutt/mutt_bgrun evince %s
 text/html; $HOME/.mutt/html2txt %s; copiousoutput
 text/html; $HOME/.mutt/mutt_bgrun firefox %s
 
+# calendar
+text/calendar; mutt-ics; copiousoutput
+
 text/*; vim %s
 
 # Unidentified files

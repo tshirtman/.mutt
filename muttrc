@@ -50,4 +50,5 @@ set ssl_starttls = yes
 set ssl_force_tls = yes
 
 auto_view text/html
+auto_view text/calendar
 alternative_order text/enriched text/plain text text/html
