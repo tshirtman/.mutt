@@ -1,5 +1,8 @@
 unset from;
 unset signature;
+set editor="~/.mutt/term ~/.mutt/compose personnal"
+
+set signature="$HOME/.mutt/signatures/personnal";
 set from="Gabriel Pettier <gabriel.pettier@gmail.com>";
 set smtp_url = "smtp://gabriel.pettier@smtp.gmail.com:587/"
 set smtp_pass = `gpg2 --batch --decrypt $PWD/.mutt/passwords.gpg 2>/dev/null|jq .mail_gmail -r`

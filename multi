@@ -1,0 +1,20 @@
+## Multiplexing using tmux
+# taken/adapted from http://muddygoat.org/git/mutt.git/tree/muttrc?1575c91d056c16163f6e07124de3d30487632857#n208
+set edit_headers=yes
+
+# forward messages
+#macro index,pager f "v<save-entry>/tmp/mutt-forward<enter>q<shell-escape>~/.mutt/term '~/bin/mutt-compose.sh /tmp/mutt-forward personal'<enter>"
+
+# override the <recall-message> hotkey
+macro index,pager R "<shell-escape>~/.mutt/term mutt -F ~/.mutt/compose -p<enter>"
+# prevent recall on <mail>
+set recall=no
+
+# Set the editor for for editing messages in-place,
+# allows re-editing of messages before sending, e.g. for use in forwarding messages.
+macro compose e '<enter-command>set my_oldeditor=$editor<enter><enter-command>set editor="vim"<enter><edit-message><enter-command>set editor=$my_oldeditor<enter>'
+#macro index,pager e '<enter-command>set editor="vim +set\ tw=72 +/^$/+1"<enter><edit>'
+#<enter-command>set editor="cp %s %s.2; ~/.mutt/term '~/bin/mutt-compose.sh %s.2'"<enter>'
+
+# open mailbox listing in a new window
+macro index,pager y '<shell-escape>~/.mutt/term "mutt -y"<enter><enter>'

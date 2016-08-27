@@ -1,0 +1,12 @@
+source ~/.mutt/query
+source ~/.mutt/colors
+
+# remove hooks, headers and sig, they are already in the draft
+unhook send-hook
+unset signature
+unmy_hdr *
+
+# call the right editor immediately
+set edit_headers=yes
+set autoedit=yes
+set editor="vim +/^$/+1 +'pu_' +':noh'"

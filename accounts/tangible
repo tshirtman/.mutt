@@ -1,4 +1,6 @@
 unset from;
+set editor="~/.mutt/term ~/.mutt/compose tangible"
+
 set signature="$HOME/.mutt/signatures/tangible";
 set from="Gabriel Pettier <gabriel@tangibledisplay.com>";
 set smtp_url = "smtp://"gabriel@tangibledisplay.com"@mail.gandi.net:587/"
