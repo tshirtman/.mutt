@@ -7,7 +7,7 @@ from re import fullmatch
 
 
 for f in listdir('[Gmail]'):
-    if fullmatch('\.[\w ]*', f) and isdir(join('[Gmail]', f)):
+    if fullmatch('\..*', f) and isdir(join('[Gmail]', f)):
         if not exists(f[1:]):
             check_output(['ln', '-s', join('[Gmail]', f), f[1:]])
         else:
