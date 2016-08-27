@@ -1,14 +1,9 @@
 #!/usr/bin/env sh
-echo $DISPLAY >> /tmp/q
-echo $@ >> /tmp/q
 if [ -z $DISPLAY ]
 then
-    echo tmux >> /tmp/q
     tmux new-window -t mail $@
     sleep 2
 else
-    echo xterm >> /tmp/q
     i3-sensible-terminal --hide-menubar -e $@
     sleep 2
 fi
-echo ended >> /tmp/q

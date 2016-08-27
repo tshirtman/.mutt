@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
-echo $@ >> /tmp/q
-
-echo "!!$2.2!!" >> /tmp/q
-
 cp $2 $2.2
-cat $2.2 >> /tmp/q
-
 mutt -F <(cat ~/.mutt/accounts/$1 ~/.mutt/compose.rc ) -H $2.2
-
-echo after >> /tmp/q
 rm $2.2
