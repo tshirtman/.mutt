@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 if [ -z $DISPLAY ]
 then
-    tmux new-window -t mail $@
+    tmux new -s mail
+    tmux new-window -t mail -n compose $@
+    tmux attach -t mail
     sleep 2
 else
     i3-sensible-terminal --hide-menubar -e $@
