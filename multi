@@ -6,7 +6,7 @@ set edit_headers=yes
 #macro index,pager f "v<save-entry>/tmp/mutt-forward<enter>q<shell-escape>~/.mutt/term '~/bin/mutt-compose.sh /tmp/mutt-forward personal'<enter>"
 
 # override the <recall-message> hotkey
-macro index,pager R "<shell-escape>~/.mutt/term mutt -F ~/.mutt/compose -p<enter>"
+# macro index,pager R "<shell-escape>~/.mutt/term mutt -F ~/.mutt/compose.rc -p<enter>"
 # prevent recall on <mail>
 set recall=no
 
