@@ -15,8 +15,9 @@ source $HOME/.mutt/gpg.rc
 source $HOME/.mutt/sidebar
 source $HOME/.mutt/gpg-contacts.rc
 source $HOME/.mutt/multi
-
 source $HOME/.mutt/base16-mutt-256
+source $HOME/.mutt/colors
+
 
 # initial box
 set spoolfile=+Personal/INBOX

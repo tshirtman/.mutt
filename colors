@@ -1,35 +1,35 @@
 # colors
-color header brightred default subject
-color hdrdefault cyan default
-color quoted green default
-color status cyan default
-color indicator red default
-color normal white default
-color tree cyan default
-
-color   index       brightcyan             default ~N  # new messages
-
-# Colors for items in the reader
-#color header brightyellow default "^(From|Subject):"
-color header brightyellow default ^From:
+# color header brightred default subject
+# color hdrdefault cyan default
+# color quoted green default
+# color status cyan default
+# color indicator red default
+# color normal white default
+# color tree cyan default
+# 
+# color   index       brightcyan             default ~N  # new messages
+# 
+# # Colors for items in the reader
+# # color header brightyellow default "^(From|Subject):"
+color header brightwhite default ^From:
 color header brightred default ^Subject:
 color header brightyellow default ^To:
 color header brightyellow default ^Cc:
 color header brightred default ^Date:
-mono header bold "^(From|Subject):"
-
-color search brightred black # highlight results
-color body yellow default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
-color index blue default ~T # tagged messages
-color index cyan default ~D # deleted messages
-#color indicator magenta default # currently highlighted message
-color error red default # error messages
-#color status brightwhite cyan # status line (unread msgs, current dir, etc.)
-#color markers brightwhite cyan # shortcut statusline (q:Quit, etc.)
-
-color quoted cyan default # quote colours
-color quoted1 brightcyan default
-color quoted2 green default
-color quoted3 blue default
-color quoted4 yellow default
-color quoted5 red default
+# # mono header bold "^(From|Subject):"
+# 
+# color search brightred black # highlight results
+# color body yellow default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+# color index blue default ~T # tagged messages
+# color index cyan default ~D # deleted messages
+# #color indicator magenta default # currently highlighted message
+# color error red default # error messages
+# #color status brightwhite cyan # status line (unread msgs, current dir, etc.)
+# #color markers brightwhite cyan # shortcut statusline (q:Quit, etc.)
+# 
+# color quoted cyan default # quote colours
+# color quoted1 brightcyan default
+# color quoted2 green default
+# color quoted3 blue default
+# color quoted4 yellow default
+# color quoted5 red default
