@@ -1,6 +1,19 @@
 #!/usr/bin/env sh
-box=$1
-new=$(ls $box/new | wc -l)
+maildir=$1
+account=$2
+box=$3
+
+if [ -z "$account" ]
+then
+    account=*
+fi
+
+if [ -z "$box" ]
+then
+    box="INBOX"
+fi
+
+new=$(ls $maildir/$account/$box/new | wc -l)
 if [ $new != '0' ]; then
-   notify-send "${box#$HOME/Mail/}: $new unread message(s)"
+   notify-send "$account/$box: $new unread message(s)"
 fi
