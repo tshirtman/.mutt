@@ -1,0 +1,74 @@
+#!/usr/bin/env python
+# python mail notifier, parses the mailboxes for messages ind "new" and
+# display a preview in a notification box
+
+from sys import argv
+from os import listdir
+from os.path import exists
+from glob import glob
+import notify2
+import email
+
+if len(argv) < 2:
+    print "usage {} maildir [account] [box]"
+    exit(1)
+
+maildir = argv[1]
+account = box = ''
+
+if len(argv) > 2:
+    account = argv[2]
+
+if len(argv) > 3:
+    box = argv[3]
+
+if not account:
+    account = '*'
+
+if not box:
+    box = 'INBOX'
+
+new = {
+    x: len(listdir(x))
+    for x in glob('{}/{}/{}/new'.format(maildir, account, box))
+}
+
+if sum(new.values()):
+    notify2.init('mailsync')
+    for b, n in new.items():
+        message = []
+        if not n:
+            continue
+
+        # start from last, because we won't show everything
+        for i, m in enumerate(listdir(b)[::-1]):
+            if i > 5:
+                break
+
+            fn = '{}/{}'.format(b, m)
+            if not exists(fn):
+                # could be in "cur" and thus *not* new, or tmp, then we
+                # don't care
+                continue
+
+            with open(fn) as body:
+                mail = email.message_from_file(body)
+                text = mail.get_payload()
+                sender = mail.get('From')
+
+                while isinstance(text, list):
+                    text = text[0].get_payload()
+
+                # only show start of message
+                message.append('{}|{}'.format(sender[:10], text[:100]))
+
+        print "message:", message
+        notification = notify2.Notification(
+            '{} new mail{} in {}'.format(
+                n, 's' if n > 1 else '', b[len(maildir):-len('/new')]
+            ),
+            '\n'.join(message),
+            '/usr/share/icons/ubuntu-mobile/actions/scalable/email.svg'
+        )
+
+        notification.show()
