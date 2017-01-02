@@ -15,5 +15,5 @@ fi
 
 new=$(ls $maildir/$account/$box/new | wc -l)
 if [ $new != '0' ]; then
-   notify-send "$account/$box: $new unread message(s)"
+   notify-send -i /usr/share/icons/ubuntu-mobile/actions/scalable/email.svg "$account/$box: $new unread message(s)"
 fi
