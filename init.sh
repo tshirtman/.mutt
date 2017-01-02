@@ -48,7 +48,7 @@ while true
 do
 read -p "do you want to build neomutt?" yn
 case $yn in
-	[Yy]*) sudo apt-get install debhelper dh-autoreconf docbook-xml docbook-xsl libgnutls28-dev libgpgme11-dev libidn11-dev libkrb5-dev libncursesw5-dev libsasl2-dev libtokyocabinet-dev xsltproc w3m libnotmuch-dev
+	[Yy]*) sudo apt-get install debhelper dh-autoreconf docbook-xml docbook-xsl libgnutls28-dev libgpgme11-dev libidn11-dev libkrb5-dev libncursesw5-dev libsasl2-dev libtokyocabinet-dev xsltproc w3m libnotmuch-dev python-notifier2
 		pushd /tmp
 		git clone https://anonscm.debian.org/git/pkg-mutt/mutt.git || (pushd mutt; git pull; popd)
 		wget http://http.debian.net/debian/pool/main/m/mutt/mutt_$(head -n 1 mutt/debian/changelog |sed -s 's/.*(\(.*\)-.*/\1/').orig.tar.gz
