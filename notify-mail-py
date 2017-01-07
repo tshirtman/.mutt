@@ -3,14 +3,21 @@
 # display a preview in a notification box
 
 from sys import argv
-from os import listdir
+from os import listdir, stat
 from os.path import exists
 from glob import glob
+from time import time
 import notify2
 import email
 
 if len(argv) < 2:
-    print "usage {} maildir [account] [box]"
+    print "usage {} maildir [account] [box] [max_age]"
+    print """
+    will look for new messages in maildir, allow filtering by account
+    and box (default to INBOX), then maximum age (default to 0, which
+    means no filtering). A notification is displayed with the number of
+    new mails, and a preview of the most recent ones.
+    """
     exit(1)
 
 maildir = argv[1]
@@ -22,15 +29,22 @@ if len(argv) > 2:
 if len(argv) > 3:
     box = argv[3]
 
+if len(argv) > 4:
+    max_age = argv[4]
+
 if not account:
     account = '*'
 
 if not box:
     box = 'INBOX'
 
+if not max_age:
+    max_age = 0
+
 new = {
     x: len(listdir(x))
     for x in glob('{}/{}/{}/new'.format(maildir, account, box))
+    if not max_age or time() - stat(x).st_ctime < max_age
 }
 
 if sum(new.values()):
