@@ -21,7 +21,9 @@ if len(argv) < 2:
     exit(1)
 
 maildir = argv[1]
-account = box = ''
+account = box = '*'
+box = 'INBOX'
+max_age = 0
 
 if len(argv) > 2:
     account = argv[2]
@@ -30,21 +32,12 @@ if len(argv) > 3:
     box = argv[3]
 
 if len(argv) > 4:
-    max_age = argv[4]
-
-if not account:
-    account = '*'
-
-if not box:
-    box = 'INBOX'
-
-if not max_age:
-    max_age = 0
+    max_age = time() - float(argv[4])
 
 new = {
     x: len(listdir(x))
     for x in glob('{}/{}/{}/new'.format(maildir, account, box))
-    if not max_age or time() - stat(x).st_ctime < max_age
+    if not max_age or stat(x).st_ctime > max_age
 }
 
 if sum(new.values()):
