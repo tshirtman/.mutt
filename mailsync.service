@@ -1,5 +1,5 @@
 [Unit]
-Description=resume mail sync
+Description=perform full mailsync
 After=suspend.target
 #After=hibernate.target
 #After=hybrid-sleep.target
@@ -7,7 +7,7 @@ After=suspend.target
 [Service]
 User=gabriel
 Group=gabriel
-ExecStart=/home/gabriel/.local/bin/mailsync resume
+ExecStart=/home/gabriel/.local/bin/mailsync fullsync
 
 [Install]
 WantedBy=suspend.target
