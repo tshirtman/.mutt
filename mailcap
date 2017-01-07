@@ -13,8 +13,8 @@ image/*; $HOME/.mutt/mutt_bgrun eog %s
 application/pdf; $HOME/.mutt/mutt_bgrun evince %s
 
 # HTML
-text/html; $HOME/.mutt/html2txt %s; copiousoutput
 text/html; $HOME/.mutt/mutt_bgrun firefox %s
+text/html; $HOME/.mutt/html2txt %s; copiousoutput
 
 # calendar
 text/calendar; mutt-ics; copiousoutput
