@@ -61,7 +61,7 @@ if sum(new.values()):
             with open(fn) as body:
                 mail = email.message_from_file(body)
                 text = mail.get_payload()
-                sender = mail.get('From')
+                sender = email.utils.parseaddr(mail.get('From'))[1]
 
                 while isinstance(text, list):
                     text = text[0].get_payload()
