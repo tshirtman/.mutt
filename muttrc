@@ -22,9 +22,9 @@ source $HOME/.mutt/colors
 # initial box
 set spoolfile=+Personal/INBOX
 
-set header_cache = $HOME/.mutt/cache/headers
+# set header_cache = $HOME/.mutt/cache/headers
 set message_cachedir = $HOME/.mutt/cache/bodies
-set certificate_file = $HOME/.mutt/certificates
+# set certificate_file = $HOME/.mutt/certificates
 
 set mailcap_path = $HOME/.mutt/mailcap
 
