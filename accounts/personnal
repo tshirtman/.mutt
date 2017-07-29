@@ -8,5 +8,5 @@ set smtp_url = "smtp://gabriel.pettier@smtp.gmail.com:587/"
 set smtp_pass = `gpg2 --batch --decrypt $PWD/.mutt/passwords.gpg 2>/dev/null|jq .mail_gmail -r`
 set trash="+Personal/[Gmail]/.Corbeille";
 set record="+Personal/[Gmail]/.Messages Envoy&AOk-s";
-set mbox="+[Personal/Gmail]/.Tous les messages";
-set postponed="+[Personal/Gmail]/.Brouillons"';
+set mbox="+Personal/[Gmail]/.Tous les messages";
+set postponed="+Personal/[Gmail]/.Brouillons"';

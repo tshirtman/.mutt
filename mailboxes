@@ -1,5 +1,5 @@
 mailboxes \
- "+[Personal]========================================"\
+ "+[Personal]————————————————————————————————————————"\
 	"+Personal/Tous les messages"\
 	"+Personal/Important"\
 	"+Personal/Suivis"\
@@ -20,7 +20,7 @@ mailboxes \
 	"+Personal/ML/.kivy-dev"\
 	"+Personal/ML/.kivy-users"\
 	"+Personal/ML/.neomutt"\
- "+[tangible]======================================"\
+ "+[tangible]————————————————————————————————————————"\
 	"+tangible/INBOX"\
 	"+tangible/Sent"\
 	"+tangible/Drafts"\

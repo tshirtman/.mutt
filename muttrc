@@ -48,9 +48,8 @@ set text_flowed = yes
 
 set sleep_time = 0
 
-# set ssl for smtp
-set ssl_starttls = yes
 set ssl_force_tls = yes
+set ssl_starttls = yes
 
 auto_view text/html
 auto_view text/calendar

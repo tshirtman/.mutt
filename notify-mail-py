@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # python mail notifier, parses the mailboxes for messages ind "new" and
 # display a preview in a notification box
 

@@ -8,8 +8,8 @@ Host imap.gmail.com
 User gabriel.pettier@gmail.com
 PassCmd "gpg2 --batch --decrypt ~/.mutt/passwords.gpg |jq .mail_gmail -r"
 #Use SSL
-UseIMAPS yes
-CertificateFile /etc/ssl/certs/ca-certificates.crt
+SSLType IMAPS
+SSLVersion TLSv1.2
 
 IMAPStore gmail-remote
 Account gmail
@@ -32,8 +32,8 @@ ImapAccount tangible
 Host mail.gandi.net
 User gabriel@tangibledisplay.com
 PassCmd "gpg2 --batch --decrypt ~/.mutt/passwords.gpg |jq .mail_tangible -r"
-UseIMAPS yes
-CertificateFile /etc/ssl/certs/ca-certificates.crt
+SSLType IMAPS
+SSLVersion TLSv1.2
 
 IMAPStore tangible-remote
 Account tangible
