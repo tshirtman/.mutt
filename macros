@@ -1,4 +1,11 @@
 # macros
+bind index,pager g noop
+bind index,pager i noop
+bind index,pager,browser . noop
+
+# reload muttrc!
+macro index,browser \Cr "<enter-command>source ~/.muttrc<enter>"
+
 macro index,pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 
 macro index p "<enter-command>set pager_index_lines=30"
@@ -13,6 +20,10 @@ bind index u        sync-mailbox
 bind index <space>  collapse-thread
 bind index _        collapse-all
 
+set my_alt_limit_match="all"
+set my_limit_match="~N|~O"
+macro index L "<enter-command>source $HOME/.mutt/toggle_only_new.rc<enter>" "toggle only see new/old mails"
+
 #bind compose p postpone-message
 
 #bind editor  noop #fix for spaces in names of folders
@@ -23,12 +34,7 @@ macro index,pager gs "=[Gmail]/Messages envoyés" "Go to starred messages"
 macro index,pager gd "=[Gmail]/Drafts" "Go to drafts"
 
 # notmuch
-macro index <F8> \
-"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
-<shell-escape>clear; cat ~/.mutt/nm-help; notmuch-mutt -r --prompt search<enter>\
-<change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
-<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
-      "notmuch: search mail"
+macro index \Cs "<enter-command>source $HOME/.mutt/search_notmuch.rc<enter>" "notmuch: search mail"
 
 macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"

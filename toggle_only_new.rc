@@ -1,0 +1,4 @@
+push "<limit>$my_limit_match\n"
+set my_tmp=$my_limit_match
+set my_limit_match=$my_alt_limit_match
+set my_alt_limit_match=$my_tmp
