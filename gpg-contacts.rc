@@ -1,0 +1,2 @@
+send-hook . unset crypt_autoencrypt
+send-hook "~t 'gabriel.pettier@gmail.com'" set crypt_autoencrypt

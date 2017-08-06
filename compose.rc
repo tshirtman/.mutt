@@ -1,5 +1,6 @@
 source ~/.mutt/query
 source ~/.mutt/colors
+source ~/.mutt/gpg.rc
 
 # remove hooks, headers and sig, they are already in the draft
 unhook send-hook
