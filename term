@@ -4,8 +4,6 @@ then
     tmux new -s mail
     tmux new-window -t mail -n compose $@
     tmux attach -t mail
-    sleep 2
 else
     i3-sensible-terminal --hide-menubar -e $@
-    sleep 2
 fi

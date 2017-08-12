@@ -1,0 +1,5 @@
+set fast_reply
+set fcc_attach
+unset mime_forward
+set include
+set forward_quote

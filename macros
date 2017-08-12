@@ -14,6 +14,7 @@ macro index,pager gt "|mutt2task<enter>"
 
 bind index gg       first-entry
 bind index G        last-entry
+macro index a        "<limit>all\n"
 
 bind index R        group-reply
 bind index u        sync-mailbox
@@ -36,8 +37,8 @@ macro index,pager gd "=[Gmail]/Drafts" "Go to drafts"
 # notmuch
 macro index \Cs "<enter-command>source $HOME/.mutt/search_notmuch.rc<enter>" "notmuch: search mail"
 
-macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
-macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro index,pager \cb "<pipe-message> env BROWSER=x-www-browser urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> env BROWSER=x-www-browser urlscan<Enter>" "call urlscan to extract URLs out of a message"
 
 # open a different virtual folder
 bind index,pager X change-vfolder

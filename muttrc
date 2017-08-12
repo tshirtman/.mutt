@@ -17,14 +17,11 @@ source $HOME/.mutt/gpg-contacts.rc
 source $HOME/.mutt/multi
 source $HOME/.mutt/base16-mutt-256
 source $HOME/.mutt/colors
+source $HOME/.mutt/pre-compose
 
 
 # initial box
 set spoolfile=+Personal/INBOX
-
-# set header_cache = $HOME/.mutt/cache/headers
-set message_cachedir = $HOME/.mutt/cache/bodies
-# set certificate_file = $HOME/.mutt/certificates
 
 set mailcap_path = $HOME/.mutt/mailcap
 
