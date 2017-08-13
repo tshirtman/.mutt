@@ -1,4 +1,5 @@
 #!/usr/bin/env python2
+# coding: utf8
 # python mail notifier, parses the mailboxes for messages ind "new" and
 # display a preview in a notification box
 
@@ -9,21 +10,31 @@ from glob import glob
 from time import time
 import notify2
 import email
+import re
 
 if len(argv) < 2:
-    print "usage {} maildir [account] [box] [max_age]"
+    print "usage {} maildir [account] [box] [max_age] [multiple]"
     print """
     will look for new messages in maildir, allow filtering by account
     and box (default to INBOX), then maximum age (default to 0, which
     means no filtering). A notification is displayed with the number of
     new mails, and a preview of the most recent ones.
+
+    if multiple is passed, then one notification will be generated for
+    each message.
     """
     exit(1)
+
+
+def shorten_body(text):
+    return re.sub('<[^>]*>', '', text)[:100] + '…'
+
 
 maildir = argv[1]
 account = box = '*'
 box = 'INBOX'
 max_age = 0
+multiple = False
 
 if len(argv) > 2:
     account = argv[2]
@@ -33,6 +44,9 @@ if len(argv) > 3:
 
 if len(argv) > 4:
     max_age = time() - float(argv[4])
+
+if len(argv) > 5:
+    multiple = argv[5] == 'multiple'
 
 new = {
     x: len(listdir(x))
@@ -62,20 +76,32 @@ if sum(new.values()):
                 mail = email.message_from_file(body)
                 text = mail.get_payload()
                 sender = email.utils.parseaddr(mail.get('From'))[1]
+                obj = email.Header.decode_header(mail.get('Subject'))[0][0]
 
                 while isinstance(text, list):
                     text = text[0].get_payload()
 
-                # only show start of message
-                message.append('{}|{}'.format(sender[:10], text[:100]))
+                if multiple:
+                    message.append((sender, obj, text))
+                else:
+                    # only show start of message
+                    message.append('{}|{}'.format(sender[:10], text[:100]))
 
-        print "message:", message
-        notification = notify2.Notification(
-            '{} new mail{} in {}'.format(
-                n, 's' if n > 1 else '', b[len(maildir):-len('/new')]
-            ),
-            '\n'.join(message),
-            '/usr/share/icons/ubuntu-mobile/actions/scalable/email.svg'
-        )
+        if multiple:
+            for sender, obj, text in message:
+                n = notify2.Notification(
+                    '{sender}: {obj}'.format(sender=sender, obj=obj),
+                    '{text}'.format(text=shorten_body(text))
+                )
+                n.show()
 
-        notification.show()
+        else:
+            notification = notify2.Notification(
+                '{} new mail{} in {}'.format(
+                    n, 's' if n > 1 else '', b[len(maildir):-len('/new')]
+                ),
+                '\n'.join(message),
+                '/usr/share/icons/ubuntu-mobile/actions/scalable/email.svg'
+            )
+
+            notification.show()
