@@ -1,3 +1,6 @@
 folder-hook . 'unset trash'
 folder-hook Personal source $HOME/.mutt/accounts/personnal
 folder-hook tangible source $HOME/.mutt/accounts/tangible
+
+reply-hook '~t @tangibledisplay.com' source $HOME/.mutt/accounts/tangible
+reply-hook '~t gabriel.pettier.*@gmail.com' source $HOME/.mutt/accounts/personnal
