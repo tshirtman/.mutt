@@ -1,4 +1,6 @@
 folder-hook . 'unset trash'
+folder-hook . 'push "<limit>$my_alt_limit_match\n"'
+
 folder-hook Personal source $HOME/.mutt/accounts/personnal
 folder-hook tangible source $HOME/.mutt/accounts/tangible
 
