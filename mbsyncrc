@@ -6,7 +6,7 @@ IMAPAccount gmail
 # Address to connect to
 Host imap.gmail.com
 User gabriel.pettier@gmail.com
-PassCmd "gpg2 --batch --decrypt ~/.mutt/passwords.gpg |jq .mail_gmail -r"
+PassCmd "gpg2 --batch --decrypt ~/.neomutt/passwords.gpg |jq .mail_gmail -r"
 #Use SSL
 SSLType IMAPS
 SSLVersion TLSv1.2
@@ -31,7 +31,7 @@ Patterns *
 ImapAccount tangible
 Host mail.gandi.net
 User gabriel@tangibledisplay.com
-PassCmd "gpg2 --batch --decrypt ~/.mutt/passwords.gpg |jq .mail_tangible -r"
+PassCmd "gpg2 --batch --decrypt ~/.neomutt/passwords.gpg |jq .mail_tangible -r"
 SSLType IMAPS
 SSLVersion TLSv1.2
 

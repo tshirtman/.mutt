@@ -1,20 +1,20 @@
 #MS office documents
-application/excel; $HOME/.mutt/mutt_bgrun libreoffice %s 2> /dev/null
-application/ms-exc; $HOME/.mutt/mutt_bgrun libreoffice %s 2> /dev/null
-application/msword; $HOME/.mutt/mutt_bgrun libreoffice %s 2> /dev/null
-application/vnd.ms-exc; $HOME/.mutt/mutt_bgrun libreoffice %s 2> /dev/null
-application/vnd.ms-excel; $HOME/.mutt/mutt_bgrun libreoffice %s 2> /dev/null
-application/x-msexcel; $HOME/.mutt/mutt_bgrun libreoffice %s 2> /dev/null
+application/excel; $HOME/.neomutt/mutt_bgrun libreoffice %s 2> /dev/null
+application/ms-exc; $HOME/.neomutt/mutt_bgrun libreoffice %s 2> /dev/null
+application/msword; $HOME/.neomutt/mutt_bgrun libreoffice %s 2> /dev/null
+application/vnd.ms-exc; $HOME/.neomutt/mutt_bgrun libreoffice %s 2> /dev/null
+application/vnd.ms-excel; $HOME/.neomutt/mutt_bgrun libreoffice %s 2> /dev/null
+application/x-msexcel; $HOME/.neomutt/mutt_bgrun libreoffice %s 2> /dev/null
 
 # Images
-image/*; $HOME/.mutt/mutt_bgrun eog %s 2> /dev/null
+image/*; $HOME/.neomutt/mutt_bgrun eog %s 2> /dev/null
 
 # PDFs
-application/pdf; $HOME/.mutt/mutt_bgrun evince %s 2> /dev/null
+application/pdf; $HOME/.neomutt/mutt_bgrun evince %s 2> /dev/null
 
 # HTML
-text/html; $HOME/.mutt/mutt_bgrun firefox %s 2> /dev/null
-text/html; $HOME/.mutt/html2txt %s; copiousoutput
+text/html; $HOME/.neomutt/mutt_bgrun ~/.local/node_modules/.bin/electron ~/.neomutt/html-viewer/main.js %s 2> /dev/null
+text/html; $HOME/.neomutt/html2txt %s; copiousoutput
 
 # calendar
 text/calendar; mutt-ics; copiousoutput
@@ -22,6 +22,6 @@ text/calendar; mutt-ics; copiousoutput
 text/*; vim %s
 
 # Unidentified files
-application/octet-stream; $HOME/.mutt/mutt_bgrun xdg-open %s 2> /dev/null
+application/octet-stream; $HOME/.neomutt/mutt_bgrun xdg-open %s 2> /dev/null
 
-multipart/alternative; less %s
+multipart/alternative; $HOME/.neomutt/open-multipart %s

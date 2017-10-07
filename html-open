@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+a=$(mktemp)
+
+cat > $a < /dev/stdin
+
+echo $a >> /tmp/log
+
+# mv $1 $a
+(~/.local/node_modules/.bin/electron ~/.neomutt/html-viewer/main.js $a && rm $a) &

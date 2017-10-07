@@ -23,7 +23,7 @@ bind index _        collapse-all
 
 set my_alt_limit_match="all"
 set my_limit_match="~N|~O"
-macro index L "<enter-command>source $HOME/.mutt/toggle_only_new.rc<enter>" "toggle only see new/old mails"
+macro index L "<enter-command>source toggle_only_new.rc<enter>" "toggle only see new/old mails"
 
 #bind compose p postpone-message
 
@@ -35,7 +35,7 @@ macro index,pager gs "=[Gmail]/Messages envoyés" "Go to starred messages"
 macro index,pager gd "=[Gmail]/Drafts" "Go to drafts"
 
 # notmuch
-macro index \Cf "<enter-command>source $HOME/.mutt/search_notmuch.rc<enter>" "notmuch: search mail"
+macro index \Cf "<enter-command>source search_notmuch.rc<enter>" "notmuch: search mail"
 
 macro index,pager \cb "<pipe-message> env BROWSER=x-www-browser urlscan<Enter>" "call urlscan to extract URLs out of a message"
 macro attach,compose \cb "<pipe-entry> env BROWSER=x-www-browser urlscan<Enter>" "call urlscan to extract URLs out of a message"
@@ -54,3 +54,12 @@ bind index,pager \eX vfolder-from-query
 
 # switch between normal and virtual mailboxes
 bind index,pager \ex sidebar-toggle-virtual
+
+# macro index,pager,attach W "<pipe-message>w3m -T text/html<enter>"
+
+macro pager,attach O <pipe-message>~/.neomutt/html-open<enter> "open mail in electron"
+macro index,pager W <pipe-message>~/.neomutt/open-multipart.sh<enter> "open multipart mail in electron"
+macro pager,attach o <pipe-message>~/.neomutt/open&<enter>
+
+macro editor \Cp <up>
+macro editor \Cn <down>

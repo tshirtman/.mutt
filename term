@@ -6,4 +6,5 @@ then
     tmux attach -t mail
 else
     i3-sensible-terminal --hide-menubar -e $@
+
 fi

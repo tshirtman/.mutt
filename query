@@ -1,4 +1,4 @@
-set query_command="$HOME/.mutt/ntmw.sh %s"
+set query_command="$HOME/.neomutt/ntmw.sh %s"
 set query_format="%t %-25.24n %a %e"
 
 bind editor <Tab> complete-query

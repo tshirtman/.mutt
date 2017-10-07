@@ -1,4 +1,28 @@
 #!/usr/bin/env bash
+# reroute error outputs to /tmp/log
 cp $2 $2.2
-mutt -F <(cat ~/.mutt/accounts/$1 ~/.mutt/compose.rc ) -H $2.2
+tempdir=$(mktemp -d)
+tempfile=$(mktemp)
+echo "set tmpdir=$tempdir" > $tempfile
+
+COMMAND='/usr/bin/pandoc -f markdown -t html --webtex --template=email.html -i "${watch_src_path}" 2> /dev/null > '$tempfile.html
+# COMMAND='echo "${watch_src_path}" >> /tmp/log3'
+echo $COMMAND >> /tmp/log
+
+~/.local/bin/watchmedo shell-command -D -i '*.swp;*.swpx' -c "$COMMAND" $tempdir &
+pid_watch=$!
+echo $pid_watch >> /tmp/log
+
+touch $tempfile.html
+viewer="$HOME/.local/node_modules/.bin/electron $HOME/.neomutt/html-viewer/main.js $tempfile.html"
+echo "macro compose V \"<shell-escape>$viewer&<enter>\"" >> $tempfile
+$viewer&
+
+pid_electron=$!
+echo $pid_electron >> /tmp/log
+
+neomutt -F <(cat ~/.neomutt/accounts/$1 ~/.neomutt/compose.rc $tempfile) -H $2.2
+
+kill $pid_watch $pid_electron
+rm -rf $tempdir $tempfile $tempfile.html
 rm $2.2

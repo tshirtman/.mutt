@@ -9,11 +9,6 @@ unset markers              # no ugly plus signs
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 alternative_order text/plain text/enriched text/html
 
-#bind pager k  previous-line
-#bind pager j  next-line
-#bind pager gg top
-#bind pager G  bottom
-
 bind pager R  group-reply
 
 # View attachments properly.

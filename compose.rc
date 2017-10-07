@@ -1,11 +1,18 @@
-source ~/.mutt/query
-source ~/.mutt/colors
-source ~/.mutt/gpg.rc
+source ~/.neomutt/query
+source ~/.neomutt/colors
+source ~/.neomutt/gpg.rc
+
+set sendmail="$HOME/.neomutt/sendmail"
+set send_charset='us-ascii:utf-8'
+set wait_key = no        # shut up, mutt
 
 # remove hooks, headers and sig, they are already in the draft
 unhook send-hook
 unset signature
 unmy_hdr *
+
+set fcc_attach
+
 
 # call the right editor immediately
 set edit_headers=yes

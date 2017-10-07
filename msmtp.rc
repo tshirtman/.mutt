@@ -1,0 +1,42 @@
+###########################################################
+# GLOBAL
+###########################################################
+# Set default values for all following accounts.
+defaults
+
+# Use the mail submission port 587 instead of the SMTP port 25.
+port 587
+
+# Always use TLS.
+tls on
+
+###########################################################
+# GMAIL
+###########################################################
+account gmail
+host smtp.gmail.com
+# tls_fingerprint 00:CD:2C:5E:5F:D5:F2:17:12:05:39:5E:78:43:D8:87:2C:F0:B1:34:2F:1C:A2:C5:77:92:5B:4E:45:57:EE:3B
+tls_fingerprint 38:59:80:A1:20:6C:5C:E8:FD:87:28:3F:3F:AC:25:3D:73:3C:F3:71:7F:8B:4D:B2:DD:E9:63:5A:9F:D8:17:56
+from gabriel.pettier@gmail.com
+
+auth on
+user gabriel.pettier
+
+passwordeval gpg2 --batch --decrypt $HOME/.neomutt/passwords.gpg 2>/dev/null|jq .mail_gmail -r
+
+###########################################################
+# TANGIBLE
+###########################################################
+account tangible
+host mail.gandi.net
+tls_fingerprint 84:F6:E4:9E:42:52:50:A8:80:91:CA:9F:82:28:80:6E:1D:20:9D:CD:08:69:C1:FA:E2:B5:44:91:74:28:4E:7C
+
+from gabriel@tangibledisplay.com
+
+auth on
+user gabriel@tangibledisplay.com
+
+passwordeval gpg2 --batch --decrypt $HOME/.neomutt/passwords.gpg 2>/dev/null|jq .mail_tangible -r
+
+
+account default : gmail

@@ -112,3 +112,19 @@ case $yn in
 	*) echo "please answer yes or no";;
 esac
 done
+
+if [ ! $(which electron) ]
+then
+	while true
+	do
+	read -p "do you want to install electron into ~/.local/node-modules? (Y/N)" yn
+	case $yn in
+		[Yy]*) pushd ~/.local/
+			npm install electron
+			popd
+			break;;
+		[Nn]*) break;;
+		*) echo "please answer yes or no";;
+	esac
+	done
+fi

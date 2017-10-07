@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+
+import email
+from sys import argv, stdin
+from base64 import b64decode
+from os import makedirs
+from os.path import expanduser
+from shutil import rmtree
+from subprocess import call
+import tempfile
+
+if len(argv) > 1:
+    with open(argv[1], 'rb') as f:
+        message = email.message_from_binary_file(f)
+else:
+    message = email.message_from_string(stdin.read())
+
+basepath = tempfile.mkdtemp()
+viewer = [
+    expanduser('~/.local/node_modules/.bin/electron'),
+    expanduser('~/.neomutt/html-viewer/main.js'),
+    '{}/email.html'.format(basepath)
+]
+
+try:
+    makedirs(basepath)
+except:
+    pass
+
+content_map = {}
+
+raw_message = None
+
+if message.is_multipart():
+    for p in message.walk():
+        cid = p.get('Content-ID', '').strip('<>')
+
+        if p.get_content_type() == 'text/html':
+            raw_message = p.get_payload()
+
+        elif cid:
+            filename = p.get_filename()
+            if not filename:
+                # best effort
+                filename = '{}.{}'.format(cid, p.get_content_subtype())
+            content_map[cid] = filename
+
+            with open('{}/{}'.format(basepath, filename), 'bw') as f:
+                f.write(b64decode(p.get_payload()))
+
+    if not raw_message:
+        print("uh? multipart without an html part?")
+    else:
+        for cid, filename in content_map.items():
+            raw_message = raw_message.replace(
+                'cid:{}'.format(cid),
+                'file:///{}/{}'.format(basepath, filename))
+        with open('{}/email.html'.format(basepath), 'w') as f:
+            f.write(raw_message)
+
+    call(viewer)
+
+    rmtree(basepath)
+
+else:
+    print("is not multipart!")

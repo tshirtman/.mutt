@@ -5,7 +5,7 @@ set sidebar_format = "%B%<F? [%F]>%* %<N?%N/>%S"
 set vfolder_format = "%6n(%6N) %f"
 set sort=threads
 
-macro index B "<enter-command>source $HOME/.mutt/toggle_index_format.rc<enter>"
+macro index B "<enter-command>source toggle_index_format.rc<enter>"
 
 ignore headers *
 unignore headers from to subject date cc
