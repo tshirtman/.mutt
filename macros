@@ -23,7 +23,7 @@ bind index _        collapse-all
 
 set my_alt_limit_match="all"
 set my_limit_match="~N|~O"
-macro index L "<enter-command>source toggle_only_new.rc<enter>" "toggle only see new/old mails"
+macro index L "<enter-command>source ~/.neomutt/toggle_only_new.rc<enter>" "toggle only see new/old mails"
 
 #bind compose p postpone-message
 
