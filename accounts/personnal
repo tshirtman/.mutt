@@ -1,7 +1,6 @@
-unset signature;
-set editor="~/.mutt/term ~/.mutt/compose personnal"
+set editor="~/.neomutt/term ~/.neomutt/compose personnal"
 
-set signature="$HOME/.mutt/signatures/personnal";
+set signature="$HOME/.neomutt/signatures/personnal";
 set from="Gabriel Pettier <gabriel.pettier@gmail.com>";
 set trash="+Personal/[Gmail]/.Corbeille";
 set record="+Personal/[Gmail]/.Messages Envoy&AOk-s";

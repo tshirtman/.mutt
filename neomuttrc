@@ -19,7 +19,7 @@ source base16-mutt-256
 source colors
 source pre-compose
 
-set tmpdir='/tmp/neomutt/'
+set tmpdir='/tmp/neomutt'
 set sendmail="$HOME/.neomutt/sendmail"
 set send_charset='us-ascii:utf-8'
 

@@ -1,6 +1,6 @@
-set editor="~/.mutt/term ~/.mutt/compose tangible"
+set editor="~/.neomutt/term ~/.neomutt/compose tangible"
 
-set signature="$HOME/.mutt/signatures/tangible";
+set signature="$HOME/.neomutt/signatures/tangible";
 set from="Gabriel Pettier <gabriel@tangibledisplay.com>";
 set trash="+tangible/Trash";
 set record="+tangible/Sent";

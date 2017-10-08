@@ -93,7 +93,7 @@ do
 read -p "do you want to link [Gmail]/.* mailboxes into their parent dir? (Y/N)" yn
 case $yn in
 	[Yy]*) pushd $HOME/Mail/Personal
-		python3 $HOME/.mutt/links.py
+		python3 $HOME/.neomutt/links.py
 		popd
 		break;;
 	[Nn]*) break;;
@@ -106,7 +106,7 @@ while true
 do
 read -p "do you want to link gpg-agent.conf into ~/.gnupg? (Y/N)" yn
 case $yn in
-	[Yy]*) ln -s $HOME/.mutt/gpg-agent.conf ~/.gnupg/
+	[Yy]*) ln -s $HOME/.neomutt/gpg-agent.conf ~/.gnupg/
 		break;;
 	[Nn]*) break;;
 	*) echo "please answer yes or no";;

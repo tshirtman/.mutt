@@ -35,7 +35,7 @@ macro index,pager gs "=[Gmail]/Messages envoyés" "Go to starred messages"
 macro index,pager gd "=[Gmail]/Drafts" "Go to drafts"
 
 # notmuch
-macro index \Cf "<enter-command>source search_notmuch.rc<enter>" "notmuch: search mail"
+macro index \Cf "<enter-command>source ~/.neomutt/search_notmuch.rc<enter>" "notmuch: search mail"
 
 macro index,pager \cb "<pipe-message> env BROWSER=x-www-browser urlscan<Enter>" "call urlscan to extract URLs out of a message"
 macro attach,compose \cb "<pipe-entry> env BROWSER=x-www-browser urlscan<Enter>" "call urlscan to extract URLs out of a message"
