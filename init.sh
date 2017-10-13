@@ -98,3 +98,14 @@ then
 	esac
 	done
 fi
+
+while true
+do
+read -p "link email.html into /usr/share/pandoc/data/templates/email.html? (Y/N)" yn
+case $yn in
+	[Yy]*) sudo ln -s email.html /usr/share/pandoc/data/templates
+		break;;
+	[Nn]*) break;;
+	*) echo "please answer yes or no";;
+esac
+done
