@@ -86,7 +86,10 @@ if sum(new.values()):
                 text = mail.get_payload()
                 sender = email.utils.parseaddr(mail.get('From'))[1]
                 obj = email.header.decode_header(mail.get('Subject'))[0]
-                obj = obj[0].decode(obj[1])
+                try:
+                    obj = obj[0].decode(obj[1])
+                except:
+                    obj = obj[0]
 
                 while isinstance(text, list):
                     text = text[0].get_payload()
