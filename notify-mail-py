@@ -73,7 +73,16 @@ if sum(new.values()):
                 continue
 
             with open(fn) as body:
-                mail = email.message_from_file(body)
+                try:
+                    mail = email.message_from_file(body)
+                except UnicodeDecodeError:
+                    if multiple:
+                        message.append(('error', 'error', 'error'))
+                    else:
+                        # only show start of message
+                        message.append('{}|{}'.format('error', '...'))
+                    continue
+
                 text = mail.get_payload()
                 sender = email.utils.parseaddr(mail.get('From'))[1]
                 obj = email.header.decode_header(mail.get('Subject'))[0]

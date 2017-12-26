@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+maildir=$1
+account=$2
+box=$3
+
+if [ -z "$account" ]
+then
+    account=*
+fi
+
+if [ -z "$box" ]
+then
+    box="INBOX"
+fi
+
+frm -s new $maildir/$account/$box | xargs -d "\n" -n1 notify-send
