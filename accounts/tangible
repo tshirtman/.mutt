@@ -1,4 +1,4 @@
-set editor="~/.neomutt/term ~/.neomutt/compose tangible"
+# set editor="~/.neomutt/term ~/.neomutt/compose tangible"
 
 set signature="$HOME/.neomutt/signatures/tangible";
 set from="Gabriel Pettier <gabriel@tangibledisplay.com>";

@@ -1,4 +1,4 @@
-set editor="~/.neomutt/term ~/.neomutt/compose personnal"
+# set editor="~/.neomutt/term $HOME/.neomutt/compose personnal"
 
 set signature="$HOME/.neomutt/signatures/personnal";
 set from="Gabriel Pettier <gabriel.pettier@gmail.com>";

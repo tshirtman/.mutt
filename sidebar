@@ -29,10 +29,10 @@ macro index,pager b '<enter-command>toggle sidebar_visible<enter>'
 # macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 # macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 
-color sidebar_divider 		color240 	color0
-color sidebar_flagged 		color33 	color0
-color sidebar_highlight 	color0 		color136
-color sidebar_indicator 	color0 		color137
-color sidebar_new 		color7  	color0
-color sidebar_spoolfile 	color37 	color0
-color sidebar_ordinary  	color240 	color0
+# color sidebar_divider 		color240 	color0
+# color sidebar_flagged 		color33 	color0
+# color sidebar_highlight 	color0 		color136
+# color sidebar_indicator 	color0 		color137
+# color sidebar_new 		color7  	color0
+# color sidebar_spoolfile 	color37 	color0
+# color sidebar_ordinary  	color240 	color0

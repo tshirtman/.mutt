@@ -14,9 +14,9 @@ source query
 source gpg.rc
 source sidebar
 source gpg-contacts.rc
-source multi
-source base16-mutt-256
-source colors
+# source multi
+# source base16-mutt-256
+# source colors
 source pre-compose
 
 set tmpdir='/tmp/neomutt'
