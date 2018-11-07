@@ -109,3 +109,9 @@ case $yn in
 	*) echo "please answer yes or no";;
 esac
 done
+
+# setup msmtp-queue
+chmod +x msmtp*
+cp msmtp* ~/.local/bin/
+mkdir -p ~/.neomutt/.msmtp.queue/
+chmod 0700 ~/.neomutt/.msmtp.queue/
