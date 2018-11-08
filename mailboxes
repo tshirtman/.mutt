@@ -4,7 +4,7 @@ mailboxes \
 	"+Personal/Important"\
 	"+Personal/Suivis"\
 	"+Personal/Brouillons"\
-	"+Personal/Messages envoy&AOk-s"\
+	"+Personal/Messages envoyés"\
 	"+Personal/Corbeille"\
 	"+Personal/Spam"\
 	"+Personal/INBOX"\
@@ -25,4 +25,11 @@ mailboxes \
 	"+tangible/Sent"\
 	"+tangible/Drafts"\
 	"+tangible/Trash"\
+ "+[partoo]——————————————————————————————————————————"\
+	"+partoo/INBOX"\
+	"+partoo/Tous les messages"\
+	"+partoo/Important"\
+	"+partoo/Suivis"\
+	"+partoo/Brouillons"\
+	"+partoo/Messages envoyés"\
 

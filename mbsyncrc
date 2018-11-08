@@ -8,13 +8,15 @@ Host imap.gmail.com
 User gabriel.pettier@gmail.com
 PassCmd "gpg2 --batch --decrypt ~/.neomutt/passwords.gpg |jq .mail_gmail -r"
 #Use SSL
-UseIMAPS yes
+SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
+Timeout 0
 
 IMAPStore gmail-remote
 Account gmail
 
 MaildirStore gmail-local
+SubFolders Legacy
 # The trailing "/" is important
 Path ~/Mail/Personal/
 Inbox ~/Mail/Personal/INBOX/
@@ -32,7 +34,7 @@ ImapAccount tangible
 Host mail.gandi.net
 User gabriel@tangibledisplay.com
 PassCmd "gpg2 --batch --decrypt ~/.neomutt/passwords.gpg |jq .mail_tangible -r"
-UseIMAPS yes
+SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 IMAPStore tangible-remote
@@ -45,6 +47,30 @@ Inbox ~/Mail/tangible/INBOX
 Channel tangible
 Master :tangible-remote:
 Slave :tangible-local:
+Patterns *
+
+
+# #########
+# Partoo
+# #########
+ImapAccount partoo
+Host imap.gmail.com
+User gabriel@partoo.fr
+PassCmd "gpg2 --batch --decrypt ~/.neomutt/passwords.gpg |jq .mail_partoo -r"
+SSLType IMAPS
+# # CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore partoo-remote
+Account partoo
+
+MaildirStore partoo-local
+SubFolders Legacy
+Path ~/Mail/partoo/
+Inbox ~/Mail/partoo/INBOX
+
+Channel partoo
+Master :partoo-remote:
+Slave :partoo-local:
 Patterns *
 
 # Automatically create missing mailboxes, only locally
