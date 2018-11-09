@@ -2,7 +2,15 @@ folder-hook . 'unset trash'
 folder-hook . 'push "<limit>$my_alt_limit_match\n"'
 
 folder-hook Personal source ~/.neomutt/accounts/personnal
-folder-hook tangible source ~/.neomutt/accounts/tangible
-
-reply-hook '~t @tangibledisplay.com' source accounts/tangible
 reply-hook '~t gabriel.pettier.*@gmail.com' source accounts/personnal
+reply-hook '~c gabriel.pettier.*@gmail.com' source accounts/personnal
+
+folder-hook tangible source ~/.neomutt/accounts/tangible
+reply-hook '~t gabriel@tangibledisplay.com' source accounts/tangible
+reply-hook '~t dev@tangibledisplay.com' source accounts/tangible
+reply-hook '~c gabriel@tangibledisplay.com' source accounts/tangible
+reply-hook '~c dev@tangibledisplay.com' source accounts/tangible
+
+folder-hook partoo source ~/.neomutt/accounts/partoo
+reply-hook '~t gabriel@partoo.fr' source accounts/partoo
+reply-hook '~c gabriel@partoo.fr' source accounts/partoo
