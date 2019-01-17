@@ -25,17 +25,13 @@ set my_alt_limit_match="all"
 set my_limit_match="~N|~O"
 macro index L "<enter-command>source ~/.neomutt/toggle_only_new.rc<enter>" "toggle only see new/old mails"
 
-#bind compose p postpone-message
-
-#bind editor  noop #fix for spaces in names of folders
-macro index,pager y "unset trash\n<sync-mailbox> " "Gmail archive message"
-macro index,pager gi "=INBOX" "Go to inbox"
-macro index,pager ga "=[Gmail]/Tous les messages" "Go to all mail"
-macro index,pager gs "=[Gmail]/Messages envoyés" "Go to starred messages"
-macro index,pager gd "=[Gmail]/Drafts" "Go to drafts"
-
 # notmuch
 macro index \Cf "<enter-command>source ~/.neomutt/search_notmuch.rc<enter>" "notmuch: search mail"
+bind index,pager \` modify-labels
+
+# mu
+macro index gS "<enter-command>source ~/.neomutt/mu-find.rc<enter>" "mu find"
+macro index gR "<change-folder-readonly>~/Mail/search" "mu find results"
 
 macro index,pager \cb "<pipe-message> env BROWSER=x-www-browser urlscan<Enter>" "call urlscan to extract URLs out of a message"
 macro attach,compose \cb "<pipe-entry> env BROWSER=x-www-browser urlscan<Enter>" "call urlscan to extract URLs out of a message"
@@ -63,3 +59,10 @@ macro pager,attach o <pipe-message>~/.neomutt/open&<enter>
 
 macro editor \Cp <up>
 macro editor \Cn <down>
+
+# set nm_query_window_duration=2
+# set nm_query_window_timebase="day" # or "hour", "day", "week", "month", "year"
+
+# generate virtual folder from query with time window
+# bind index < vfolder-window-backward
+# bind index > vfolder-window-forward

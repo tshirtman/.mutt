@@ -4,9 +4,28 @@ set folder_format="%2C %t %N %d %f"
 set sidebar_format = "%B%<F? [%F]>%* %<N?%N/>%S"
 set vfolder_format = "%6n(%6N) %f"
 set sort=threads
+set hidden_tags = ""
+set sidebar_short_path
+
+tag-transforms "inbox"   "i"   \
+               "unread"  "u"   \
+               "replied" "↻ "  \
+               "sent"    "➥ "  \
+               "todo"    "T"   \
+               "deleted" "DEL" \
+               "invites" "CAL"
+
+tag-formats "inbox"   "GI" \
+            "unread"  "GU" \
+            "replied" "GR" \
+            "sent"    "GS" \
+            "todo"    "Gt" \
+            "deleted" "GD" \
+            "invites" "Gi"
+
+set index_format='%4C %S %[%y.%m.%d] %-18.18n %?GU?%GU& ? %?GR?%GR& ? %?GI?%GI& ? %s'
 
 macro index B "<enter-command>source toggle_index_format.rc<enter>"
 
 ignore headers *
 unignore headers from to subject date cc
-

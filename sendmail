@@ -1,3 +1,4 @@
 #!/bin/sh
 
-~/.neomutt/MIMEmbellish | msmtp "$@"
+~/.neomutt/MIMEmbellish | ~/.local/bin/msmtpq "$@"
+# msmtp "$@"

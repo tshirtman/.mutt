@@ -20,7 +20,7 @@ source colors
 source pre-compose
 
 set tmpdir='/tmp/neomutt'
-set sendmail="$HOME/.local/bin/msmtpq
+set sendmail="~/.neomutt/sendmail"
 set send_charset='us-ascii:utf-8'
 
 # initial box
@@ -34,7 +34,7 @@ set use_envelope_from = yes # answer from the address we got the mail to
 # set sendmail_wait=-1
 set wait_key = no        # shut up, mutt
 set timeout = 3          # idle time before scanning
-set mail_check = 1       # minimum time between scans
+set mail_check = 5       # minimum time between scans
 set delete               # don't ask, just do
 unset confirmappend      # don't ask, just do!
 set quit                 # don't ask, just do!!
@@ -54,3 +54,11 @@ set ssl_starttls = yes
 auto_view text/html
 auto_view text/calendar
 alternative_order text/enriched text/plain text text/html
+
+
+set abort_noattach = ask-yes
+set abort_noattach_regex = "\\<(attached|attachments|attaché|attachés|attache|attachons|joined|joint|jointe|joints|jointes|joins|joignons)\\>"
+
+set check_new = yes
+set new_mail_command = "notify-send --icon='~/.neomutt/neomutt-64.png' \
+'New Email' '%n new messages, %u unread.' &"

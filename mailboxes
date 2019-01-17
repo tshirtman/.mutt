@@ -1,35 +1,35 @@
-mailboxes \
- "+[Personal]————————————————————————————————————————"\
-	"+Personal/Tous les messages"\
-	"+Personal/Important"\
-	"+Personal/Suivis"\
-	"+Personal/Brouillons"\
-	"+Personal/Messages envoyés"\
-	"+Personal/Corbeille"\
-	"+Personal/Spam"\
-	"+Personal/INBOX"\
-	"+Personal/tangible"\
-	"+Personal/kivy"\
-	"+Personal/python-for-android"\
-	"+Personal/github"\
-	"+Personal/afpy"\
-	"+Personal/twitter"\
-	"+Personal/ML"\
-	"+Personal/ML/.kivy-asso"\
-	"+Personal/ML/.kivy-org"\
-	"+Personal/ML/.kivy-dev"\
-	"+Personal/ML/.kivy-users"\
-	"+Personal/ML/.neomutt"\
- "+[tangible]————————————————————————————————————————"\
-	"+tangible/INBOX"\
-	"+tangible/Sent"\
-	"+tangible/Drafts"\
-	"+tangible/Trash"\
- "+[partoo]——————————————————————————————————————————"\
-	"+partoo/INBOX"\
-	"+partoo/Tous les messages"\
-	"+partoo/Important"\
-	"+partoo/Suivis"\
-	"+partoo/Brouillons"\
-	"+partoo/Messages envoyés"\
+mailboxes "+Personal/"
+mailboxes "+Personal/INBOX"
+mailboxes "+Personal/Messages envoyés"
+mailboxes "+Personal/Tous les messages"
+mailboxes "+Personal/Important"
+mailboxes "+Personal/Suivis"
+mailboxes "+Personal/Brouillons"
+mailboxes "+Personal/Corbeille"
+mailboxes "+Personal/Spam"
+mailboxes "+Personal/kivy"
+mailboxes "+Personal/python-for-android"
+mailboxes "+Personal/github"
+mailboxes "+Personal/afpy"
+mailboxes "+Personal/twitter"
+mailboxes "+Personal/ML"
+mailboxes "+Personal/ML/.kivy-asso"
+mailboxes "+Personal/ML/.kivy-org"
+mailboxes "+Personal/ML/.kivy-dev"
+mailboxes "+Personal/ML/.kivy-users"
+mailboxes "+Personal/ML/.neomutt"
 
+mailboxes "+tangible/"
+mailboxes "+tangible/INBOX"
+mailboxes "+tangible/Sent"
+mailboxes "+tangible/Drafts"
+mailboxes "+tangible/Trash"
+
+mailboxes "+partoo/"
+mailboxes "+partoo/INBOX"
+mailboxes "+partoo/Messages envoyés"
+mailboxes "+partoo/Tous les messages"
+mailboxes "+partoo/Important"
+mailboxes "+partoo/Suivis"
+mailboxes "+partoo/Brouillons"
+mailboxes "+partoo/Corbeille"
