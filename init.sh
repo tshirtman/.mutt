@@ -24,8 +24,10 @@ while true
 do
 read -p "do you want to install systemd service for mailsync?" yn
 case $yn in
-	[Yy]*) sudo cp $PWD/mailsync.service /etc/systemd/system/
-		sudo systemctl enable mailsync.service
+	[Yy]*)  mkdir -p ~/.config/system/user/
+		cp $PWD/mailsync.service ~/.config/systemd/user/
+		systemctl enable mailsync.service --user
+		systemctl start mailsync.service --user
 		break;;
 	[Nn]*) break;;
 	*) echo "please answer yes or no";;
