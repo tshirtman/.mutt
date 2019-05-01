@@ -13,7 +13,7 @@ image/*; $HOME/.neomutt/mutt_bgrun eog %s 2> /dev/null
 application/pdf; $HOME/.neomutt/mutt_bgrun evince %s 2> /dev/null
 
 # HTML
-text/html; $HOME/.neomutt/mutt_bgrun ~/.local/node_modules/.bin/electron ~/.neomutt/html-viewer/main.js %s 2> /dev/null
+text/html; $HOME/.neomutt/html-open %s
 text/html; $HOME/.neomutt/html2txt %s; copiousoutput
 
 # calendar

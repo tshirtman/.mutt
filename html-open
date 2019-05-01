@@ -1,9 +1,12 @@
 #!/usr/bin/env sh
-a=$(mktemp)
+a=$(mktemp --suffix=.html)
 
-cat > $a < /dev/stdin
+if [ $1 ]; then
+  cp $1 $a
+else
+  cat > $a < /dev/stdin
+fi
 
-echo $a >> /tmp/log
+# echo $a >> /tmp/log
 
-# mv $1 $a
 (~/.local/node_modules/.bin/electron ~/.neomutt/html-viewer/main.js $a && rm $a) &

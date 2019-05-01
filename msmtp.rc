@@ -21,7 +21,19 @@ from gabriel.pettier@gmail.com
 auth on
 user gabriel.pettier
 
-passwordeval gpg2 --batch --decrypt $HOME/.neomutt/passwords.gpg 2>/dev/null|jq .mail_gmail -r
+passwordeval pass show personnal/mail.pass
+
+###########################################################
+# Partoo
+###########################################################
+account partoo
+host smtp.gmail.com
+from gabriel@partoo.fr
+
+auth on
+user gabriel@partoo.fr
+
+passwordeval pass show partoo/mail.pass
 
 ###########################################################
 # TANGIBLE
@@ -34,7 +46,7 @@ from gabriel@tangibledisplay.com
 auth on
 user gabriel@tangibledisplay.com
 
-passwordeval gpg2 --batch --decrypt $HOME/.neomutt/passwords.gpg 2>/dev/null|jq .mail_tangible -r
+passwordeval pass show tangible/mail.pass
 
 
 account default : gmail

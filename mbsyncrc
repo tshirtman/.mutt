@@ -6,7 +6,7 @@ IMAPAccount gmail
 # Address to connect to
 Host imap.gmail.com
 User gabriel.pettier@gmail.com
-PassCmd "gpg2 --batch --decrypt ~/.neomutt/passwords.gpg |jq .mail_gmail -r"
+PassCmd "pass perso/mail.pass"
 #Use SSL
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -33,7 +33,7 @@ Patterns *
 ImapAccount tangible
 Host mail.gandi.net
 User gabriel@tangibledisplay.com
-PassCmd "gpg2 --batch --decrypt ~/.neomutt/passwords.gpg |jq .mail_tangible -r"
+PassCmd "pass tangible/mail.pass"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -56,7 +56,7 @@ Patterns *
 ImapAccount partoo
 Host imap.gmail.com
 User gabriel@partoo.fr
-PassCmd "gpg2 --batch --decrypt ~/.neomutt/passwords.gpg |jq .mail_partoo -r"
+PassCmd "pass partoo/mail.pass"
 SSLType IMAPS
 # # CertificateFile /etc/ssl/certs/ca-certificates.crt
 

@@ -2,8 +2,8 @@
 
 set signature="$HOME/.neomutt/signatures/personnal";
 set from="Gabriel Pettier <gabriel.pettier@gmail.com>";
-set trash="+Personal/[Gmail]/.Corbeille";
-set record="+Personal/[Gmail]/.Messages Envoy&AOk-s";
+set trash="+Personal/Corbeille";
+set record="+Personal/Messages Envoyés";
 set mbox="+Personal/[Gmail]/.Tous les messages";
 set postponed="+Personal/[Gmail]/.Brouillons"';
 set envelope_from = yes

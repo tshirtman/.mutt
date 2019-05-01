@@ -13,11 +13,7 @@ const url = require('url');
 let mainWindow;
 
 function load(filename) {
-  mainWindow.loadURL(url.format({
-    pathname: filename,
-    protocol: 'file:',
-    slashes: true
-  }));
+  mainWindow.loadFile(filename);
 }
 
 function createWindow () {
