@@ -77,3 +77,29 @@ Patterns *
 Create Slave
 # Save the synchronization state files in the relevant directory
 SyncState *
+
+
+# #########
+# tshirtman.dev
+# #########
+ImapAccount tshirtman.dev
+Host tshirtman.dev
+User gabriel
+PassCmd "pass tshirtman.dev/mail.pass"
+SSLType IMAPS
+
+IMAPStore tshirtman.dev-remote
+Account tshirtman.dev
+
+MaildirStore tshirtman.dev-local
+SubFolders Legacy
+Path ~/Mail/tshirtman.dev/
+Inbox ~/Mail/tshirtman.dev/INBOX
+
+Channel tshirtman.dev
+Master :tshirtman.dev-remote:
+Slave :tshirtman.dev-local:
+Patterns *
+
+Create Slave
+SyncState *

@@ -14,3 +14,7 @@ reply-hook '~c dev@tangibledisplay.com' source accounts/tangible
 folder-hook partoo source ~/.neomutt/accounts/partoo
 reply-hook '~t gabriel@partoo.fr' source accounts/partoo
 reply-hook '~c gabriel@partoo.fr' source accounts/partoo
+
+folder-hook tshirtman.dev source ~/.neomutt/accounts/tshirtman.dev
+reply-hook '~t gabriel@tshirtman.dev' source accounts/tshirtman.dev
+reply-hook '~c gabriel@tshirtman.dev' source accounts/tshirtman.dev

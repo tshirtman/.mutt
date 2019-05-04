@@ -21,7 +21,18 @@ from gabriel.pettier@gmail.com
 auth on
 user gabriel.pettier
 
-passwordeval pass show personnal/mail.pass
+passwordeval pass show perso/mail.pass
+
+###########################################################
+# tshirtman.dev
+###########################################################
+account tshirtman.dev
+host tshirtman.dev
+from gabriel@tshirtman.dev
+
+auth on
+user gabriel
+passwordeval pass show tshirtman.dev/mail.pass
 
 ###########################################################
 # Partoo

@@ -1,0 +1,6 @@
+set signature="$HOME/.neomutt/signatures/tshirtman.dev";
+set from="Gabriel Pettier <gabriel@tshirtman.dev>";
+set trash="+tsirtman.dev/Trash";
+set record="+tsirtman.dev/Sent";
+set postponed="+tsirtman.dev/Drafts";
+set envelope_from = yes
