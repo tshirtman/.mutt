@@ -1,7 +1,7 @@
 # set editor="~/.neomutt/term ~/.neomutt/compose tangible"
 
 set signature="$HOME/.neomutt/signatures/partoo";
-set from="Gabriel Pettier <gabriel@tpartoo.fr>";
+set from="Gabriel Pettier <gabriel@partoo.fr>";
 set trash="+partoo/Trash";
 set record="+partoo/Sent";
 set postponed="+partoo/Drafts";
